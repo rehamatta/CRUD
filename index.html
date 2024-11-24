@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+	<link rel="shortcut icon" href="./images/crud.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <section>
+        <div class="container bg-info py-3 rounded-4 mt-3">
+            <h1 class="text-center">CRUD SYSTEM</h1>
+            
+            <div class="form-floating mb-3">
+                <input oninput="nameValidation()" type="text" class="form-control" id="productName" placeholder="">
+                <label for="ProductName">ProductName</label>
+            </div>  
+            
+            <div class="form-floating mb-3">
+                <input oninput="priceValidation()" type="number" class="form-control" id="productPrice" placeholder="">
+                <label for="ProductPrice">ProductPrice</label>
+            </div>    
+            
+            <div class="form-floating mb-3">
+                <input oninput="categoryValidation()" list="list" type="text" class="form-control" id="productCategory" placeholder="">
+                <label for="ProductCategory">ProductCategory</label>
+
+                <datalist id="list">
+                <option value="tvs"/>
+                <option value="moblies"/>
+                <option value="screens"/>
+                <option value="electronics"/>
+                </datalist>
+            </div>              
+
+            <div class="form-floating mb-3">
+                <textarea oninput="descriptionValidation()" class="form-control" style="height: 150px;" id="productDescription" placeholder=""></textarea>
+                <label for="ProductDescription">ProductDescription</label>
+            </div>     
+            
+            <div class="form-floating mb-3">
+                <input type="file" class="form-control" id="productImage" placeholder="">
+                <label for="ProductImage">ProductImage</label>
+            </div>              
+
+            <div>
+                <button onclick="addProduct()" class="btn btnAdd bg-info-subtle" id="addProduct">Add Product</button>
+                <button onclick="updateProduct()" class="btn btnUpdate d-none bg-warning" id="updateProduct">Update Product</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid my-5">
+            <input oninput="searchProduct()" id="searchProduct" type="search" class="form-control w-50 mx-auto" placeholder="Search">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 my-5" id="rowData">
+
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/CRUD.js"></script>
+</body> 
+</html>
