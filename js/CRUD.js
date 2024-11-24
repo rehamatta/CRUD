@@ -16,10 +16,6 @@ var addProductbtn = document.getElementById("addProduct");
 var updateProductbtn = document.getElementById("updateProduct");
 var currentIndex = 0;
 
-var nameCategoryPattern = /^[a-zA-Z][a-zA-Z0-9\s-_]{1,48}[a-zA-Z0-9]$/;
-var pricePattern = /^\d+(\.\d{1,2})?$/;
-var descriptionPattern = /^[a-zA-Z0-9.,'"\-!?() ]{10,500}$/;
-
 var productList = [];
 
 if (localStorage.getItem("productContainer")) {
@@ -145,8 +141,9 @@ function updateProduct() {
 }
 
 function nameValidation() {
+  var namePattern = /^[a-zA-Z][a-zA-Z0-9\s-_]{1,48}[a-zA-Z0-9]$/;
   var term = productNameInput.value;
-  if (nameCategoryPattern.test(term)) {
+  if (namePattern.test(term)) {
     productNameInput.classList.add("is-valid");
     productNameInput.classList.remove("is-invalid");
     return true;
@@ -158,6 +155,7 @@ function nameValidation() {
 }
 
 function priceValidation() {
+  var pricePattern = /^\d+(\.\d{1,2})?$/;
   var term = productPriceInput.value;
   if (pricePattern.test(term)) {
     productPriceInput.classList.add("is-valid");
@@ -171,8 +169,9 @@ function priceValidation() {
 }
 
 function categoryValidation() {
+  var categoryPattern = /(tvs|mobiles|screens|electronics)/i;
   var term = productCategoryInput.value;
-  if (nameCategoryPattern.test(term)) {
+  if (categoryPattern.test(term)) {
     productCategoryInput.classList.add("is-valid");
     productCategoryInput.classList.remove("is-invalid");
     return true;
@@ -184,6 +183,7 @@ function categoryValidation() {
 }
 
 function descriptionValidation() {
+  var descriptionPattern = /^[a-zA-Z0-9.,'"\-!?() ]{10,500}$/;
   var term = productDescriptionInput.value;
   if (descriptionPattern.test(term)) {
     productDescriptionInput.classList.add("is-valid");
