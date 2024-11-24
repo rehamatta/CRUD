@@ -169,7 +169,7 @@ function priceValidation() {
 }
 
 function categoryValidation() {
-  var categoryPattern = /(tvs|mobiles|screens|electronics)/i;
+  var categoryPattern = /^(tvs|mobiles|screens|electronics)$/i;
   var term = productCategoryInput.value;
   if (categoryPattern.test(term)) {
     productCategoryInput.classList.add("is-valid");
