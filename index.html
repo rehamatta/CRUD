@@ -16,35 +16,39 @@
             <h1 class="text-center">CRUD SYSTEM</h1>
             
             <div class="form-floating mb-3">
-                <input oninput="nameValidation()" type="text" class="form-control" id="productName" placeholder="">
+                <input oninput="validationInputs(this, 'name-input')" type="text" class="form-control" id="productName" placeholder="">
                 <label for="ProductName">ProductName</label>
+                <p id="name-input" class="alert alert-danger d-none">please enter valid name</p>
             </div>  
             
             <div class="form-floating mb-3">
-                <input oninput="priceValidation()" type="number" class="form-control" id="productPrice" placeholder="">
+                <input oninput="validationInputs(this, 'price-input')" type="number" class="form-control" id="productPrice" placeholder="">
                 <label for="ProductPrice">ProductPrice</label>
+                <p id="price-input" class="alert alert-danger d-none">please enter valid price</p>
             </div>    
             
             <div class="form-floating mb-3">
-                <input oninput="categoryValidation()" list="list" type="text" class="form-control" id="productCategory" placeholder="">
+                <input oninput="validationInputs(this, 'category-input')" list="list" type="text" class="form-control" id="productCategory" placeholder="">
                 <label for="ProductCategory">ProductCategory</label>
-
+                <p id="category-input" class="alert alert-danger d-none">please enter valid category</p>
                 <datalist id="list">
                 <option value="tvs"/>
-                <option value="moblies"/>
+                <option value="mobiles"/>
                 <option value="screens"/>
                 <option value="electronics"/>
                 </datalist>
             </div>              
 
             <div class="form-floating mb-3">
-                <textarea oninput="descriptionValidation()" class="form-control" style="height: 150px;" id="productDescription" placeholder=""></textarea>
+                <textarea oninput="validationInputs(this, 'des-input')" class="form-control" style="height: 150px;" id="productDescription" placeholder=""></textarea>
                 <label for="ProductDescription">ProductDescription</label>
+                <p id="des-input" class="alert alert-danger d-none">please enter valid description</p>
             </div>     
             
             <div class="form-floating mb-3">
-                <input type="file" class="form-control" id="productImage" placeholder="">
+                <input onchange="validationInputs(this, 'img-input')" type="file" class="form-control" id="productImage" placeholder="">
                 <label for="ProductImage">ProductImage</label>
+                <p id="img-input" class="alert alert-danger d-none">please enter valid image</p>
             </div>              
 
             <div>
